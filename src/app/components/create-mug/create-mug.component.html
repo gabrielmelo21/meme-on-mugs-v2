@@ -1,0 +1,124 @@
+<div class="fade-in">
+
+
+  <div class="center">
+
+    <mat-card class="padding10" style="width: 100% !important;margin-bottom: 40px">
+      <mat-card-content>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()"  >
+          <!--
+          <mat-form-field style="width: 100%">
+            <input matInput formControlName="productName" placeholder="Nome da Caneca">
+          </mat-form-field>
+         -->
+
+
+         <h2 style="margin-top: 40px;">Crie Sua Caneca Personalizada</h2>
+
+         <ul>
+             <li>Clique no botão "Adicionar sua imagem" para fazer upload da sua foto ou arte.</li>
+             <li>Veja a prévia da sua caneca personalizada.</li>
+             <li>Clique em "Criar Caneca" para finalizar seu pedido.</li>
+         </ul>
+         <p class="price">Cada caneca personalizada custa <strong>R$34.90</strong>.</p>
+
+
+
+         <div class="center">
+           <div class="custom-file-upload" (click)="triggerFileInput()">
+             Adicionar sua imagem
+           </div>
+           <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+         </div>
+
+
+          <div class="center" *ngIf="!selectedFile" >
+            <img src="assets/mug_front.jpg" width="100%" height="100%" style="margin:10px;" alt="">
+          </div>
+
+          <!-- Área para exibir a imagem selecionada -->
+          <div *ngIf="selectedFile" >
+            <div class="center">
+              <img src="assets/mug_front.jpg" width="100%" height="100%" style="margin:10px;" alt="">
+              <img [src]="selectedFileUrl" alt="Imagem selecionada" width="30%" style="position: absolute;margin-left:-8%;">
+            </div>
+          </div>
+
+
+          <div *ngIf="uploadDone">
+            <h3 style="color: green">Upload feito com sucesso para o Firebase.</h3>
+          </div>
+          <div *ngIf="uploadedImageUrl">
+            <p>Uploaded Image URL: <a [href]="uploadedImageUrl" target="_blank">{{ uploadedImageUrl }}</a></p>
+          </div>
+
+          <div class="center" *ngIf="selectedFile">
+            <br>
+            <button (click)="onSubmit()" mat-raised-button color="default" type="submit" class="btn-custom" [disabled]="uploading">
+              <ng-container *ngIf="!uploading && messageType == ''">
+
+                Criar Caneca
+              </ng-container>
+            <ng-container *ngIf="uploading">
+
+               Criando Caneca...
+              </ng-container>
+
+              <ng-container *ngIf="message!='' && messageType == 'success'">
+
+                 Caneca Criada!
+                </ng-container>
+
+                <ng-container *ngIf="message!='' && messageType == 'error'">
+
+                  Tente Novamente.
+                  </ng-container>
+
+
+            </button>
+          </div>
+
+
+          <div *ngIf="message" [ngClass]="messageType" style="margin-top: 20px;">
+            {{ message }}
+          </div>
+
+          <ng-container *ngIf="message!='' && messageType == 'success'">
+            <mat-icon>add</mat-icon>
+             Adicionar ao Carrinho
+            </ng-container>
+
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <!--
+     <p>Quando eu clicar tem que cumprir alguns passos, 1. subir a imagem <br> 2. adicionar produto no banco <br> 3. colocar no shoppingCart.</p>
+   Subir uma imagem -->
+  <!-- receber a url da imagem e armazenar em localStorage -->
+  <!-- ao receber ativar a outra função, que é a created_mug, que faz o mint e salva no db-->
+
+  <br>
+<!--
+  <h2 class="textCenter">Parte de Trás</h2>
+  <div class="divider"></div>
+  <div class="center">
+    <img src="assets/mug_back.jpg" width="80%" height="80%" style="margin:10px;">
+  </div>
+-->
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</div>
+
+
+
+<app-footer></app-footer>

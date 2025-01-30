@@ -1,0 +1,119 @@
+.checkout-container {
+  max-width: 400px; /* Define uma largura máxima para o formulário */
+  margin: 0 auto; /* Centraliza o formulário na página */
+  padding: 20px;
+  background-color: #f9f9f9; /* Fundo claro para contraste */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  margin-top: 100px;
+}
+
+.form-separator {
+  border: 0;
+  height: 1px;
+  background: #ddd; /* Linha cinza clara */
+  margin-bottom: 20px;
+}
+.form-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+
+.success-message {
+  color: #28a745; /* Verde bonito */
+  font-size: 16px; /* Tamanho do texto */
+  font-weight: bold; /* Negrito para destaque */
+  margin-top: 10px; /* Espaço superior */
+  text-align: center; /* Centralizado */
+
+}
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+
+  .checkout-container{
+
+  }
+}
+
+/* Estilos para dispositivos maiores (PCs) */
+@media (min-width: 769px) {
+
+  .checkout-container{
+
+  }
+
+}
+
+
+
+
+
+.form-input-wrapper {
+  display: flex;
+  flex-direction: column; /* Faz os campos ficarem um abaixo do outro */
+  gap: 15px; /* Espaçamento entre os campos */
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column; /* Alinha rótulo e campo de entrada */
+}
+
+.form-input label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333; /* Cor do texto */
+  margin-bottom: 5px;
+}
+
+.form-input input,
+.form-input textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc; /* Borda simples */
+  border-radius: 4px; /* Cantos arredondados */
+  outline: none; /* Remove o contorno ao focar */
+  transition: border-color 0.3s ease; /* Transição suave para foco */
+}
+
+.form-input input:focus,
+.form-input textarea:focus {
+  border-color: #007bff; /* Cor da borda ao focar */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
+
+textarea {
+  resize: none; /* Impede o redimensionamento do textarea */
+  height: 80px; /* Altura padrão */
+}
+
+.search-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: white;
+  background-color: #007bff; /* Cor do botão */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex; /* Para alinhar o texto e a imagem */
+  align-items: center;
+  gap: 8px; /* Espaçamento entre o texto e a imagem */
+  transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+.search-button:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+.center {
+  display: flex;
+  justify-content: flex-start; /* Alinha à esquerda */
+}

@@ -1,0 +1,55 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+}
+
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  
+}
+
+/* Estilos para dispositivos maiores (PCs) */
+@media (min-width: 769px) {
+  .bottom-toolbar{
+    display: none !important;
+  }
+}
+
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  height: 40px; /* Ajuste o tamanho da logo conforme necessário */
+}
+
+.content {
+  margin-top: 64px; /* Ajuste o valor conforme a altura da sua toolbar */
+  padding: 16px; /* Adicione padding para o conteúdo, se necessário */
+  margin-bottom: 56px; /* Ajuste o valor conforme a altura da bottom-toolbar */
+}
+
+.bottom-toolbar {
+  position: fixed;
+  bottom: -2px !important;
+  left: 0;
+  right: 0;
+  justify-content: space-around;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: #ffffff !important;/** **/
+}
+
+.bottom-toolbar button{
+  color:rgba(0,0,0,.6) !important;
+}

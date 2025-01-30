@@ -1,0 +1,58 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px#538fa6;
+  border-bottom: 5px solid #538fa6;
+  z-index: 1000;
+  background: #ffef16 !important;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+.telephone-container{
+  display: flex;
+  justify-content: right;
+  width: 50%;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.logo-t {
+  height: 33px; /* Ajuste o tamanho da logo conforme necessário */
+}
+
+.logo {
+  height: 53px; /* Ajuste o tamanho da logo conforme necessário */
+}
+
+.content {
+  margin-top: 64px; /* Ajuste o valor conforme a altura da sua toolbar */
+  padding: 16px; /* Adicione padding para o conteúdo, se necessário */
+}
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .icon-mobile{
+    display: block;
+  }
+
+   .inline-buttons{
+     display: none;
+   }
+}
+
+/* Estilos para dispositivos maiores (PCs) */
+@media (min-width: 769px) {
+  .icon-mobile{
+    display: none;
+  }
+  .inline-buttons{
+    display: block;
+  }
+}

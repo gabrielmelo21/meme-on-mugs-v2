@@ -1,0 +1,39 @@
+
+
+
+html, body { height: 100%;  font-family: "Chewy" !important; }
+body { margin: 0;
+  font-family: "Chewy", serif !important;}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn .5s ease-in-out;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajuste conforme necessário */
+}
+.margin10{
+  margin:10px !important;
+}
+.padding10{
+  padding: 10px !important;
+}
+.textCenter{
+  text-align: center !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

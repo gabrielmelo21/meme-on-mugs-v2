@@ -1,0 +1,210 @@
+<div class="fade-in">
+
+
+
+  <div *ngIf="authenticated">
+    <h1 class="textCenter" style="margin-top: 30px;">Bem-vindo à área administrativa</h1>
+
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)='changePage(1)'>Add Produtos</button>
+      <button mat-raised-button color="accent"  (click)='changePage(2)'>Admin Produtos</button>
+      <button mat-raised-button color="warn"    (click)='changePage(3)'>Editor JSON</button>
+    </div>
+
+
+    <div class="center"   *ngIf="currentPage==2">
+      <mat-card class="padding10" style="width: 100% !important; margin-bottom: 400px">
+        <mat-card-title class="margin10">Quantidade de Produtos</mat-card-title>
+
+
+
+        <table  >
+          <thead>
+            <tr>
+              <th>Categorias</th>
+              <th>Quant.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of productsCount | keyvalue">
+              <td>{{ item.key }}</td> <!-- Nome da categoria -->
+              <td>{{ item.value }}</td> <!-- Quantidade de produtos -->
+            </tr>
+            <tr>
+              <td><strong>Total de Produtos</strong></td>
+              <td><strong>{{ totalProducts }}</strong></td> <!-- Total de produtos -->
+            </tr>
+          </tbody>
+        </table>
+
+
+        <br>
+
+
+        <mat-card-title class="margin10">Produtos</mat-card-title>
+
+
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Vídeo</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products">
+              <td>{{ product.product_name }}</td>
+              <td>
+                <img (click)="changeVideoStatus(product.product_name, false);" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYSvKnjdJKgXZ55BLkznypeHLU-5dv-T1XA&s"
+                width="30" height="30" *ngIf="product.product_video; else noVideo">
+                <ng-template #noVideo>
+                  <img (click)="changeVideoStatus(product.product_name, true);" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9C8XHg9I2Z4Evn4ly4OgjbtO0sm9Z4LJ3bQ&s" width="30" height="30">
+                </ng-template>
+              </td>
+              <td>
+                <button mat-raised-button (click)="deleteProduct(product.product_name)">
+                  X
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </mat-card>
+    </div>
+
+    <div class="center"  *ngIf="currentPage==3">
+      <mat-card class="padding10" style="width: 100% !important; margin-bottom: 400px">
+
+        <mat-card-title class="margin10">Editor JSON</mat-card-title>
+        <div class="button-container">
+          <button mat-raised-button color="primary" (click)='loadJson(1)'>pedidos.json</button>
+          <button mat-raised-button color="accent"  (click)='loadJson(2)'>categorias.json</button>
+          <button mat-raised-button color="accent"  (click)='loadJson(3)'>products.json</button>
+        </div>
+
+
+        <div>
+          <h2>Editor de JSON</h2>
+          <textarea [(ngModel)]="jsonContent" rows="20" cols="80" style="width: 100%"></textarea>
+          <br>
+          <button  mat-raised-button color="primary" (click)="updateJson()">Atualizar JSON</button>
+        </div>
+
+
+      </mat-card>
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="center" id="page1" *ngIf="currentPage==1">
+      <mat-card class="padding10" style="width: 100% !important; margin-bottom: 400px">
+        <mat-card-title class="margin10">Adicionar Produto</mat-card-title>
+
+
+        <mat-card-content>
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+
+
+            <mat-form-field style="width: 100%">
+              <input matInput formControlName="productName" placeholder="Nome do Produto">
+            </mat-form-field>
+
+            <br>
+            <mat-form-field style="width: 100%">
+              <input  matInput formControlName="productPrice" placeholder="Preço do Produto (Use Ponto)">
+            </mat-form-field>
+            <br>
+
+            <div class="form-group">
+              <label for="category-select">Categoria do Produto</label>
+              <select id="category-select" formControlName="category"  class="custom-select">
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option *ngFor="let category of categories" [value]="category">
+                  {{ category }}
+                </option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="category-select2">O produto possui Vídeo?</label>
+              <select id="category-select2" formControlName="productVideo"  class="custom-select">
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option  value="true">
+                  Sim
+                </option>
+                <option  value="false">
+                  Não
+                </option>
+              </select>
+            </div>
+
+
+
+
+
+            <br>
+
+            <p>Foto do Produto (URL)</p><br>
+            <input type="file" (change)="onFileSelected($event)" accept="image/*">
+
+            <div *ngIf="selectedFile" class="center">
+              <img [src]="selectedFileUrl" alt="Imagem selecionada" width="200">
+            </div>
+
+            <div *ngIf="uploadDone">
+              <h3 style="color: green">Upload feito com sucesso para o Firebase.</h3>
+            </div>
+            <div *ngIf="uploadedImageUrl">
+              <p>Uploaded Image URL: <a [href]="uploadedImageUrl" target="_blank">{{ uploadedImageUrl }}</a></p>
+            </div>
+
+            <div class="center" *ngIf="uploading" style="margin-top: 20px;">
+              <mat-spinner></mat-spinner>
+            </div>
+            <br>
+
+
+
+            <br>
+            <div *ngIf="productStatus !== ''" style="color:green">
+
+            </div>
+            <br>
+            <button mat-raised-button color="primary" type="submit">Adicionar Produto</button>
+          </form> <br>
+
+
+          {{JSON.stringify(this.productStatus)}}
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+
+  </div>
+
+
+
+  <div *ngIf="!authenticated">
+    <p>Você não está autorizado a acessar esta página.</p>
+  </div>
+
+
+
+
+</div>

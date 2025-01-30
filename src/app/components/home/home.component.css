@@ -1,0 +1,585 @@
+
+.banner-hero {
+
+  margin-top: 50px;
+  height: 500px; /* Ajuste a altura conforme necessário */
+  background-image: url("/assets/main-banner-new.png");
+  background-size: cover; /* Para cobrir toda a área */
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.banner-auxiliar {
+  height: 500px; /* Altura padrão */
+  background-image: url("/assets/banner-promo.png");
+  background-size: cover; /* Ajuste inicial para PCs */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .margin-bottom140{
+    margin-bottom: 40px
+  }
+
+  .banner-hero {
+
+    height: 200px; /* Altura menor para mobile */
+    width: 100%;
+  }
+  .banner-auxiliar {
+    height: 200px; /* Altura menor para mobile */
+    width: 100%;
+    background-size: 100% ; /* Ajusta a imagem para preencher 100% da largura e altura */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    margin-top: -10px;
+  }
+}
+
+/* Estilos para dispositivos maiores (PCs) */
+@media (min-width: 769px) {
+
+  .margin-bottom140{
+    margin-bottom: 140px
+  }
+
+
+  .banner-hero {
+    background-image: url("/assets/main-banner-new.png");
+    height: 500px; /* Altura maior para PCs */
+    width: 100%;
+    transform: scale(0.7);
+    margin-top: -20px;
+  }
+  .banner-auxiliar{
+    height: 500px; /* Altura maior para PCs */
+    transform: scale(0.7);
+    margin-top: -149px;
+  }
+
+  .category-section{
+    width: 71%;
+    margin-left: 13%;
+    margin-top: -60px;
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin; /* Para navegadores baseados em Gecko (Firefox) */
+  scrollbar-color: #007bff #ffffff; /* Cor da barra (azul) e do fundo (branco) */
+  border-radius: 10px
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px; /* Largura da barra vertical */
+  height: 10px; /* Altura da barra horizontal */
+  border-radius: 10px
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff; /* Cor do fundo da área de rolagem */
+  border-radius: 10px; /* Arredondamento do fundo */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Cor da barra de rolagem */
+  border-radius: 10px; /* Arredondamento da barra */
+  border: 2px solid #ffffff; /* Espaço extra ao redor da barra */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse */
+  border-radius: 10px
+}
+
+
+
+
+
+
+
+
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ajuste conforme necessário */
+  text-align: center; /* Centraliza o texto e os elementos no container */
+}
+
+
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+
+
+
+.category-title {
+
+
+}
+
+.category-title h2 {
+  font-family: "Chewy", serif !important; /* Fonte personalizada */
+  font-size: 24px; /* Tamanho do texto */
+  font-weight: normal; /* Deixa o título mais suave */
+  color: #333; /* Cor do texto (ajuste conforme necessário) */
+  margin-bottom: 10px; /* Espaço entre o texto e a linha */
+}
+
+
+/*
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.add-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #007bff; /* Cor do botão */
+  color: white;
+  border: none;
+  font-size: 24px;
+  line-height: 40px; /* Alinhar o sinal de mais verticalmente */
+  text-align: center;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #095a7b; /* Cor ao passar o mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category img {
+  width: 100%;
+  height: auto;
+  max-width: 150px; /* Ajuste conforme necessário */
+  border-radius: 8px;
+}
+
+.category p {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.category-section {
+  margin-bottom: 10px;
+}
+
+.category-title {
+  text-align: center !important;
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.load-more-button {
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white !important;
+  font-family: "Chewy", serif;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 200px;
+  max-width: 200px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: "Chewy", serif;
+
+}
+
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+.product-item h3 {
+  font-size: 1em;
+  margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 2.4em;
+  font-family: "Chewy", serif;
+}
+
+/* Ajuste no tamanho e cor do preço e parcelamento */
+.product-details p {
+  font-size: 1em;
+  color: #333; /* Cor mais discreta */
+  font-weight: normal;
+  margin: 0;
+
+  font-family: "Chewy", serif;
+}
+
+.product-extra-info .installment {
+  font-size: 1em;
+  color: #28a745;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Chewy", serif;
+}
+
+.product-extra-info .discount {
+  font-size: 0.8em;
+  color: #dc3545;
+  text-decoration: line-through;
+  margin: 0;
+  font-family: "Chewy", serif;
+}
+
+.product-extra-info {
+  margin-top: 5px;
+}
+
+/* Botão de adicionar ao carrinho alinhado à direita */
+.add-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Container para exibir produtos em rolagem horizontal (visualização de todas as categorias) */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* Container para exibir produtos de uma categoria selecionada em layout vertical */
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item {
+  /* Margem entre produtos para espaçamento vertical */
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  /* Contêiner da seção de produtos da categoria */
+  .expanded-product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os produtos */
+  }
+
+  /* Produto individual */
+  .expanded-product-item {
+    width: 100%;
+  }
+}
+
+/* Estilos para dispositivos maiores (PCs) */
+@media (min-width: 769px) {
+  /* Contêiner da seção de produtos da categoria */
+  .expanded-product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 20px; /* Espaçamento entre os produtos */
+    justify-content: center; /* Centraliza o grid no contêiner */
+    align-items: start; /* Alinha os itens ao topo */
+    padding: 20px;
+    width: 100%; /* Garante que o grid ocupe todo o espaço disponível */
+    box-sizing: border-box; /* Inclui o padding no tamanho total */
+  }
+
+  /* Produto individual */
+  .expanded-product-item {
+    width: 100%;
+    max-width: 300px; /* Limita o tamanho de cada item */
+    margin: 0; /* Remove qualquer margem que centralize individualmente os itens */
+  }
+
+  /* Imagem do produto */
+  .expanded-product-image {
+    height: 200px; /* Altura fixa para manter proporção */
+    object-fit: cover; /* Ajusta a imagem para ocupar o espaço sem distorção */
+    width: 100%; /* Garante que a imagem preencha a largura do item */
+  }
+}
+
+
+
+
+
+
+/* Contêiner da seção de produtos da categoria */
+.category-product-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo individual para cada produto na visualização expandida */
+.expanded-product-item {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  background:white !important;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagem do produto ocupando toda a largura do item */
+.expanded-product-image {
+  width: 100%;
+
+  height: auto;
+}
+
+/* Estilo para o nome do produto */
+.expanded-product-item h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333; /* cor escura para destacar */
+  margin: 0.5em 0;
+
+  font-family: "Chewy", serif;
+}
+
+/* Estilo para a seção de preço riscado */
+.expanded-product-extra-info .expanded-discount {
+  color: #777;
+  font-size: 0.9em;
+  text-decoration: line-through;
+
+  margin: 0.2em 0;
+  font-family: "Chewy", serif;
+}
+
+/* Estilo para o preço atual do produto */
+.expanded-product-details .expanded-product-price {
+  color: #d9534f; /* vermelho suave */
+  font-size: 1.5em;
+  font-weight: bold;
+
+  font-family: "Chewy", serif;
+}
+
+/* Estilo para as informações de parcelamento */
+.expanded-product-details .expanded-installment {
+  color: #5cb85c; /* verde suave */
+  font-size: 1.1em;
+
+  margin-top: 0.2em;
+  font-family: "Chewy", serif;
+}
+
+
+.installment {
+  font-size: 0.9em;
+  color: #666;
+  font-family: "Chewy", serif;
+}
+
+/* Botão de adicionar ao carrinho */
+.expanded-add-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:  #007bff; /* Cor do botão */
+  color: white;
+  border: none;
+  font-size: 24px;
+  line-height: 40px; /* Alinhar o sinal de mais verticalmente */
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+
+
+
+.expanded-fixed-button {
+  position: fixed;
+  top: 60px;          /* Distância do topo */
+  left: 20px;         /* Distância da esquerda */
+  width: 40px;        /* Largura do botão */
+  height: 40px;       /* Altura do botão */
+  background-color: #007bff; /* Azul suave para destaque */
+  border-radius: 50%; /* Forma circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Animações */
+  z-index: 1000; /* Para garantir que fique no topo */
+}
+
+.expanded-fixed-button:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+  transform: scale(1.1); /* Leve aumento ao passar o mouse */
+}
+
+.expanded-fixed-button img {
+  width: 50%; /* Ajuste para que a imagem ocupe a maior parte do botão */
+  height: 50%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product-texts-conteiner {
+  display: flex;               /* Coloca os textos e botão lado a lado */
+  justify-content: space-between; /* Espaço entre os textos e o botão */
+  align-items: center;         /* Alinha os itens verticalmente no centro */
+  width: 100%;                 /* Garante que ocupe toda a largura disponível */
+  padding: 10px 0;             /* Espaçamento superior e inferior */
+}
+
+.product-texts {
+  display: flex;
+  flex-direction: column;      /* Textos em coluna */
+  justify-content: center;     /* Centraliza os textos verticalmente */
+  text-align: left;            /* Alinha os textos à esquerda */
+  flex: 1;                     /* Ocupa o espaço restante */
+}
+
+.product-add-button {
+  display: flex;
+  align-items: center;         /* Centraliza verticalmente o botão */
+  justify-content: center;     /* Centraliza horizontalmente o botão */
+
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+
+
+

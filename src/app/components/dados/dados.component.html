@@ -1,0 +1,58 @@
+<div class="checkout-container cart-summary" style="margin-bottom: 350px !important;">
+
+  <h2 class="form-title">Seus dados para envio</h2>
+  <hr class="form-separator">
+
+
+  <div class="form-input-wrapper">
+    <div class="form-input">
+      <label for="email">Email</label>
+      <input (input)="onInputChangeEmail($event)"  id="email" type="email" placeholder="preencha com seu email..." [(ngModel)]="email" name="email">
+      <p class="success-message" *ngIf="updatedEmail">Email atualizado com sucesso! <img src="assets/check.png"  width="15" height="15"></p>
+    </div>
+
+    <div class="form-input">
+      <label for="nome">Seu Nome</label>
+      <input (input)="onInputChangeName($event)"  id="nome" type="text" placeholder="preencha com seu nome..." [(ngModel)]="nome" name="nome">
+      <p class="success-message" *ngIf="updatedNome">Nome atualizado com sucesso! <img src="assets/check.png"  width="15" height="15"></p>
+    </div>
+
+    <br>
+
+    <div class="form-input">
+      <label for="cep">CEP (apenas números)</label>
+      <input (input)="onInputChangeCEP($event)" id="cep" type="text" placeholder="Digite seu CEP" [(ngModel)]="cep" name="cep">
+      <div class="center">
+        <button class="search-button" (click)="viaCepFind(cep)" >Procurar endereço
+          <img src="assets/lupa-search.png" width="15" height="15">
+        </button>
+      </div>
+      <br>
+      <div style="margin-left: 35%">
+        <img src="assets/searching-gif.gif" width="120" height="120" style="border-radius: 20px" *ngIf="searching">
+      </div>
+
+    </div>
+
+    <p class="success-message" *ngIf="updatedEndereco">Endereço atualizado com sucesso! <img src="assets/check.png"  width="15" height="15"></p>
+
+
+    <div class="form-input">
+      <label for="endereco">Endereço</label>
+      <textarea   (input)="onInputChangeEndereco($event)"  id="endereco" type="text" placeholder="Digite seu endereço" [(ngModel)]="endereco" name="endereco"></textarea>
+
+    </div>
+
+    <div class="form-input">
+      <label for="numero">Número da Casa</label>
+      <input   (input)="onInputChangeNumeroCasa($event)"  id="numero" type="text" placeholder="Digite o número da casa" [(ngModel)]="numeroCasa" name="numeroCasa">
+    </div>
+
+
+  </div>
+
+</div>
+<br>    <br>
+
+
+<app-footer></app-footer>

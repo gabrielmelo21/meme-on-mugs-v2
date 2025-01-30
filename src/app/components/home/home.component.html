@@ -1,0 +1,125 @@
+
+<div class="fade-in" *ngIf="!isLoading">
+
+
+<div *ngIf="!categorySelected" >
+  <div class="banner-hero" >
+  </div>
+  <div class="banner-auxiliar">
+  </div>
+</div>
+
+
+
+  <!-- <img  (click)="bonk()" [src]="currentImage" width="70%" height="80%" style="z-index: 1;"> -->
+
+
+  <!--
+  *
+  *      HOME PAGE FRONT
+  *      scroll de produtos
+  *
+  -->
+  <!-- Visão de Rolagem Horizontal com Categorias -->
+  <div *ngIf="!categorySelected && !isLoading" class="category-scroll" style="margin-top: 20px;">
+    <div *ngFor="let category of categoriesProducts" class="category-section">
+
+
+      <!-- Contêiner de produtos limitado a productsToShow
+
+            HOME INICIAL, vitrini de produtos
+
+       -->
+
+      <div class="category-title">
+        <h2>Canecas com Memes {{ category.category }}</h2>
+        <hr>
+      </div>
+      <button mat-button color="primary" class="load-more-button"
+              (click)="loadProducts(category.category)">Carregar mais</button>
+      <div class="product-container  custom-scrollbar margin-bottom140" >
+
+
+        <div *ngFor="let product of category.products.slice(0, productsToShow)" class="product-item" >
+
+          <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+          <h3>{{ product.product_name }}</h3>
+
+          <div class="product-extra-info">
+            <p class="discount">De R$349,90 por</p>
+          </div>
+
+          <div class="product-details">
+            <p class="product-price">R{{ product.product_price | currency }}</p>
+            <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+          </div>
+
+          <button class="add-button" (click)="addToCart(product)">+</button>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Exibição de uma Categoria Específica -->
+  <div *ngIf="categorySelected && !isLoading"  class="expanded-category-products vertical-layout">
+    <div style="display: flex; align-items: center;">
+      <!-- Botão de voltar -->
+      <img src="assets/back.jpg" width="33" height="33" (click)="back_to_category()" class="expanded-fixed-button">
+    </div>
+
+    <!-- Título da Categoria Selecionada -->
+    <h2 style="text-align: center !important; margin-top: 10px;">{{ categorySelected.category }}</h2>
+
+    <!-- Contêiner de produtos da categoria selecionada exibidos verticalmente -->
+    <div class="expanded-product-container vertical-scroll">
+      <div *ngFor="let product of categorySelected.products"   >
+
+        <div class="expanded-product-item">
+
+
+          <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="expanded-product-image">
+
+
+          <div class="product-texts-conteiner">
+            <div class="product-texts">
+              <h3>{{ product.product_name }}</h3>
+              <div class="expanded-product-extra-info">
+                <p class="expanded-discount">De R$349,90 por</p>
+              </div>
+
+              <div class="expanded-product-details">
+                <p class="expanded-product-price">R{{ product.product_price | currency }}</p>
+                <p class="expanded-installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+              </div>
+            </div>
+            <div class="product-add-button">
+              <button class="expanded-add-button" (click)="addToCart(product)" >+</button>
+            </div>
+          </div>
+          <hr>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+<div *ngIf="isLoading" class="loading-container">
+  <img src="assets/loading.gif" width="40%" height="40%" style="border-radius: 100%;"><br>
+  <h3>Calma aí...</h3>
+</div>
+
+
+
+<app-footer></app-footer>

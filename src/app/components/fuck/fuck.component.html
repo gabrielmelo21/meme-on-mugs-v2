@@ -1,0 +1,22 @@
+<div class="faq-container">
+    <h2 style="margin-top: 60px;text-align: center;font-weight: bolder;font-size: 30pt;">FUCK</h2>
+    <h4 style="font-size: 10pt;text-align: center;">(Sigla em inglês para perguntas frenquentes)</h4>
+    <div class="center">
+         <button class="whatsapp-button" (click)="sendWhatsApp()">Enviar mensagem no WhatsApp</button>
+    </div>
+
+    <div *ngFor="let faq of faqs" class="faq-item">
+      <div class="faq-question" (click)="toggleFaq(faq)">
+        <h3>{{ faq.question }}</h3>
+        <span class="toggle-icon">{{ faq.open ? '−' : '+' }}</span>
+      </div>
+      <div class="faq-answer" [ngClass]="{ 'open': faq.open }">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+    <br><br><br><Br><br>
+  </div>
+
+
+
+<app-footer></app-footer>

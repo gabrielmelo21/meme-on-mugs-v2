@@ -1,0 +1,58 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="logo-container">
+    <img src="assets/meme-on-mugs-logo.png" alt="Logo" class="logo">
+  </span>
+
+
+  <div class="inline-buttons"  style="position: absolute; width: 10%;margin-left: 36%">
+    <button mat-button routerLink="/home" (click)=" playSound()"  >
+      <img src="assets/home-icon.png" width="15%" height="15%">
+        <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px;">Início</h3>
+    </button>
+
+    <!--
+      <button mat-icon-button routerLink="/createMug"  (click)=" playSound()">
+      <img src="assets/creating-mug-icon.png" width="100%" height="100%">
+    </button>
+
+
+
+    <button mat-icon-button routerLink="/category"  (click)=" playSound()">
+      <img src="assets/category-icon.png" width="100%" height="100%">
+    </button>
+
+    -->
+
+
+    <!-- DADOS DO USUARIO -->
+    <button mat-button routerLink="/dados" (click)=" playSound()"  >
+      <img src="assets/avatar-perfil.png" width="15%" height="15%">
+      <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px;">Seus Dados</h3>
+    </button>
+
+    <button mat-button routerLink="/shoppingCart"  (click)=" playSound()"  >
+      <img src="assets/shopping-cart.png" width="15%" height="15%">
+      <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px">Carrinho</h3>
+    </button>
+
+
+
+
+
+    <button mat-button routerLink="/fuck"  (click)=" playSound()"  >
+      <img src="assets/faq-3d.png" width="15%" height="15%">
+      <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px">FUCK</h3>
+    </button>
+
+  </div>
+
+
+
+<!--  NO MOBILE AQUI É CARRINHO -->
+  <button class="telephone-container  icon-mobile"    mat-button routerLink="/shoppingCart"  (click)=" playSound()" >
+    <!--  FAQ ICON -->
+    <img  src="assets/shopping-cart.png"  class="logo-t">
+  </button>
+
+</mat-toolbar>
+
