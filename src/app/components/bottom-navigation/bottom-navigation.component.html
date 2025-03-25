@@ -1,29 +1,29 @@
 <mat-toolbar color="primary" class="bottom-toolbar">
-  <button mat-icon-button routerLink="/home" (click)=" playSound()">
-    <img src="assets/home-icon.png" width="100%" height="100%">
+  <button mat-button routerLink="/home" (click)="playSound()">
+    <div class="toolbar-button-content">
+      <img src="assets/home-icon.png" class="toolbar-icon">
+      <span>開始</span>
+    </div>
   </button>
 
-  <!--
-    <button mat-icon-button routerLink="/createMug"  (click)=" playSound()">
-    <img src="assets/creating-mug-icon.png" width="100%" height="100%">
+  <button mat-button routerLink="/dados" (click)="playSound()">
+    <div class="toolbar-button-content">
+      <img src="assets/avatar-perfil.png" class="toolbar-icon">
+      <span>輪廓</span>
+    </div>
   </button>
 
-
-
-  <button mat-icon-button routerLink="/category"  (click)=" playSound()">
-    <img src="assets/category-icon.png" width="100%" height="100%">
+  <button mat-button routerLink="/shoppingCart" (click)="playSound()">
+    <div class="toolbar-button-content">
+      <img src="assets/shopping-cart.png" class="toolbar-icon">
+      <span>購物車o</span>
+    </div>
   </button>
 
-  -->
-
-  <button mat-icon-button routerLink="/dados"  (click)=" playSound()">
-    <img src="assets/avatar-perfil.png" width="100%" height="100%">
+  <button mat-button routerLink="/faq" (click)="playSound()">
+    <div class="toolbar-button-content">
+      <img src="assets/faq-3d.png" class="toolbar-icon">
+      <span>幫助</span>
+    </div>
   </button>
-
-
-
-  <button mat-icon-button routerLink="/fuck"  (click)=" playSound()">
-    <img src="assets/faq-3d.png" width="100%" height="100%">
-  </button>
-
 </mat-toolbar>

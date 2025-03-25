@@ -1,20 +1,37 @@
 
+.floating-button {
+  position: fixed;
+  bottom: 70px;
+  left: 12px;
+  width: 56px;
+  height: 56px;
+  background-color: red !important; /* Cor rosa padrão do Material */
+  color: gold !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Deixa o botão redondo */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1100; /* Garante que fique acima de outros elementos */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.floating-button:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+
+
 .banner-hero {
 
   margin-top: 50px;
   height: 500px; /* Ajuste a altura conforme necessário */
-  background-image: url("/assets/main-banner-new.png");
+  background-image: url("/assets/imagens/banner-hero.png");
   background-size: cover; /* Para cobrir toda a área */
   background-position: center;
   background-repeat: no-repeat;
 
-}
-.banner-auxiliar {
-  height: 500px; /* Altura padrão */
-  background-image: url("/assets/banner-promo.png");
-  background-size: cover; /* Ajuste inicial para PCs */
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* Estilos para dispositivos móveis */
@@ -28,14 +45,7 @@
     height: 200px; /* Altura menor para mobile */
     width: 100%;
   }
-  .banner-auxiliar {
-    height: 200px; /* Altura menor para mobile */
-    width: 100%;
-    background-size: 100% ; /* Ajusta a imagem para preencher 100% da largura e altura */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    margin-top: -10px;
-  }
+
 }
 
 /* Estilos para dispositivos maiores (PCs) */
@@ -162,8 +172,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #007bff; /* Cor do botão */
-  color: white;
+  background-color: gold !important; /* Cor do botão */
   border: none;
   font-size: 24px;
   line-height: 40px; /* Alinhar o sinal de mais verticalmente */
@@ -285,12 +294,13 @@
   white-space: nowrap;
   height: 2.4em;
   font-family: "Chewy", serif;
+  color:  gold !important;
 }
 
 /* Ajuste no tamanho e cor do preço e parcelamento */
 .product-details p {
   font-size: 1em;
-  color: #333; /* Cor mais discreta */
+  color: white !important; /* Cor mais discreta */
   font-weight: normal;
   margin: 0;
 
@@ -307,7 +317,7 @@
 
 .product-extra-info .discount {
   font-size: 0.8em;
-  color: #dc3545;
+  color: white;
   text-decoration: line-through;
   margin: 0;
   font-family: "Chewy", serif;
@@ -325,8 +335,7 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: #007bff;
-  color: white !important;
+
 
   display: flex;
   align-items: center;
@@ -449,7 +458,7 @@
 .expanded-product-item h3 {
   font-size: 1.2em;
   font-weight: bold;
-  color: #333; /* cor escura para destacar */
+  color: white !important; /* cor escura para destacar */
   margin: 0.5em 0;
 
   font-family: "Chewy", serif;
@@ -457,7 +466,7 @@
 
 /* Estilo para a seção de preço riscado */
 .expanded-product-extra-info .expanded-discount {
-  color: #777;
+  color: white !important; /* cor escura para destacar */
   font-size: 0.9em;
   text-decoration: line-through;
 

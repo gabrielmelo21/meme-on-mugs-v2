@@ -1,0 +1,97 @@
+<!--
+<div *ngIf="!categorySelected" >
+  <div class="banner-hero" >
+  </div>
+  <div class="banner-auxiliar">
+  </div>
+</div>
+-->
+
+
+
+
+  <!-- <img  (click)="bonk()" [src]="currentImage" width="70%" height="80%" style="z-index: 1;"> -->
+
+
+  <!--
+  *
+  *      HOME PAGE FRONT
+  *      scroll de produtos
+  *
+  -->
+  <!-- Visão de Rolagem Horizontal com Categorias -->
+
+
+
+
+
+  <!--
+    <button mat-icon-button routerLink="/createMug"  (click)=" playSound()">
+    <img src="assets/creating-mug-icon.png" width="100%" height="100%">
+  </button>
+
+
+
+  <button mat-icon-button routerLink="/category"  (click)=" playSound()">
+    <img src="assets/category-icon.png" width="100%" height="100%">
+  </button>
+
+  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+  <div class="inline-buttons"  style="position: absolute; width: 10%;margin-left: 36%">
+    <button mat-button routerLink="/home" (click)=" playSound()"  >
+      <img src="assets/home-icon.png" width="15%" height="15%">
+        <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px;">Início</h3>
+    </button>
+   v
+     mat-icon-button routerLink="/createMug"  (click)=" playSound()">
+      <img src="assets/creating-mug-icon.png" width="100%" height="100%">
+    </button>
+
+
+
+    <button mat-icon-button routerLink="/category"  (click)=" playSound()">
+      <img src="assets/category-icon.png" width="100%" height="100%">
+    </button>
+
+
+
+
+
+      <button mat-button routerLink="/dados" (click)=" playSound()"  >
+        <img src="assets/avatar-perfil.png" width="15%" height="15%">
+        <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px;">Seus Dados</h3>
+      </button>
+
+      <button mat-button routerLink="/shoppingCart"  (click)=" playSound()"  >
+        <img src="assets/shopping-cart.png" width="15%" height="15%">
+        <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px">Carrinho</h3>
+      </button>
+
+
+
+
+
+      <button mat-button routerLink="/fuck"  (click)=" playSound()"  >
+        <img src="assets/faq-3d.png" width="15%" height="15%">
+        <h3 style="font-family: 'Chewy', serif; color:black; font-weight: bold; display: inline-block; padding: 10px">FUCK</h3>
+      </button>
+
+    </div>
+    -->
+

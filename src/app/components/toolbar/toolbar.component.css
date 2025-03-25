@@ -3,10 +3,10 @@
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 2px 4px#538fa6;
-  border-bottom: 5px solid #538fa6;
+  box-shadow: 0 2px 4px gold;
+  border-bottom: 5px solid gold;
   z-index: 1000;
-  background: #ffef16 !important;
+
 }
 
 .logo-container {
