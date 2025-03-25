@@ -19,18 +19,32 @@ export class HomeComponent  implements OnInit {
   isPlaying = false; // Estado do som
   showBoneco2: boolean = false;
 
-  products = [
-    {
-      product_name: 'Caneca Davi Zedong',
-      product_image: 'assets/canecas/caneca-davi-zedong.png',
-      product_price: 34.90
-    },
-    {
-      product_name: 'Caneca John Zedong',
-      product_image: 'assets/canecas/caneca-john-zedong.png',
-      product_price: 34.90
-    }
-  ];
+
+  /**
+   * Categorias
+   *
+   * celebridade_brasil
+   * celebridade_gringa
+   * diva_pop
+   * politica
+   * esporte
+   * grunge
+   *
+   *  {
+   *       product_name: 'Davi Calabreso',
+   *       product_image: 'assets/canecas/davi_calabreso.png',
+   *       product_price: 34.90,
+   *       category: 'celebridade_brasil',
+   *     },
+   *     {
+   *       product_name: 'John Cena',
+   *       product_image: 'assets/canecas/caneca-john-zedong.png',
+   *       product_price: 34.90,
+   *       category: 'celebridade_gringa',
+   *     },
+   */
+
+
 
 
 
@@ -48,7 +62,7 @@ export class HomeComponent  implements OnInit {
 
 
   constructor(
-              private mainAPI: MainAPIService,
+              private apiService: MainAPIService,
               private shoppingCartService: ShoppingCartService,
               private snackbarService: SnackbarService,
               private playAudioService: PlayAudioService,
@@ -63,9 +77,28 @@ export class HomeComponent  implements OnInit {
     this.sharedStateService.updateNumber(value);  // Altera o valor através do serviço
   }
 
+
+  products: any[] = [];
+  categories: string[] = ['celebridade_brasil', 'celebridade_gringa', 'diva_pop', 'politica', 'esporte', 'grunge'];
+
+
+
   waitAsecond: boolean = false;
   showBoneco: boolean = false;
+
+
   ngOnInit(): void {
+
+    this.apiService.getProducts().subscribe(
+      data => {
+        this.products = data;
+      },
+      error => {
+        console.error('Erro ao carregar produtos:', error);
+      }
+    );
+
+
     this.playAudioService.playMusic()
 
     setTimeout(() => {
@@ -77,6 +110,14 @@ export class HomeComponent  implements OnInit {
 
     this.isPlaying = true;
   }
+
+
+
+  filterByCategory(category: string) {
+    return this.products.filter(product => product.category === category);
+  }
+
+
 
   toggleSound(): void {
     if (this.isPlaying) {

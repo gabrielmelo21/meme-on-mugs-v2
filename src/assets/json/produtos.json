@@ -1,0 +1,271 @@
+[
+  {
+    "product_name": "Davi Calabreso",
+    "product_image": "assets/canecas/davi_calabreso.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Tim Maia",
+    "product_image": "assets/canecas/tim_maia.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Alcione",
+    "product_image": "assets/canecas/alcione.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Ana Maria Braga",
+    "product_image": "assets/canecas/ana_maria_braga.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "John Cena",
+    "product_image": "assets/canecas/caneca-john-zedong.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Alexandre de Morais",
+    "product_image": "assets/canecas/alexandre_de_morais.png",
+    "product_price": 34.90,
+    "category": "politica"
+  },
+  {
+    "product_name": "Taylor Swift",
+    "product_image": "assets/canecas/taylor_swift.png",
+    "product_price": 34.90,
+    "category": "diva_pop"
+  },
+  {
+    "product_name": "Anitta",
+    "product_image": "assets/canecas/anitta.png",
+    "product_price": 34.90,
+    "category": "diva_pop"
+  },
+  {
+    "product_name": "Ariana Grande",
+    "product_image": "assets/canecas/ariana_grande.png",
+    "product_price": 34.90,
+    "category": "diva_pop"
+  },
+  {
+    "product_name": "Ayrton Senna",
+    "product_image": "assets/canecas/ayrton_senna.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Beyoncé",
+    "product_image": "assets/canecas/beyonce.png",
+    "product_price": 34.90,
+    "category": "diva_pop"
+  },
+  {
+    "product_name": "Bolsonaro",
+    "product_image": "assets/canecas/bolsonaro.png",
+    "product_price": 34.90,
+    "category": "politica"
+  },
+  {
+    "product_name": "Bruno Henrique",
+    "product_image": "assets/canecas/bruno_henrique.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Casimiro Miguel",
+    "product_image": "assets/canecas/casimiro_miguel.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Chino Moreno",
+    "product_image": "assets/canecas/chino_do_deftones.png",
+    "product_price": 34.90,
+    "category": "numetal"
+  },
+  {
+    "product_name": "Serj Tankian",
+    "product_image": "assets/canecas/serj_velho.png",
+    "product_price": 34.90,
+    "category": "numetal"
+  },
+  {
+    "product_name": "Fernanda Montenegro",
+    "product_image": "assets/canecas/fernanda_montenegro.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Fernanda Torres",
+    "product_image": "assets/canecas/fenanda_torres.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Jimin (BTS)",
+    "product_image": "assets/canecas/jimin_do_bts.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Jojo Todynho",
+    "product_image": "assets/canecas/jojo_todynho.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Justin Bieber",
+    "product_image": "assets/canecas/justin_bieber.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Lana Del Rey",
+    "product_image": "assets/canecas/lana_del_rey.png",
+    "product_price": 34.90,
+    "category": "diva_pop"
+  },
+  {
+    "product_name": "LeBron James",
+    "product_image": "assets/canecas/lebron_james.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Leonardo DiCaprio",
+    "product_image": "assets/canecas/leonardo_dicaprio.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Lewis Hamilton",
+    "product_image": "assets/canecas/lewis_hamilton.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Lula",
+    "product_image": "assets/canecas/lula_versao1.png",
+    "product_price": 34.90,
+    "category": "politica"
+  },
+  {
+    "product_name": "Pablo Marçal",
+    "product_image": "assets/canecas/pablo_marcal.png",
+    "product_price": 34.90,
+    "category": "politica"
+  },
+  {
+    "product_name": "Pablo Vittar",
+    "product_image": "assets/canecas/pablo_vittar.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Paulo Kogos",
+    "product_image": "assets/canecas/paulinho_kogos.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Roberto Carlos",
+    "product_image": "assets/canecas/roberto_carlos.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Max Verstappen",
+    "product_image": "assets/canecas/max_verstappen.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Ronaldo Fenômeno",
+    "product_image": "assets/canecas/ronaldo_fenomeno.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Michael Jackson (Novo)",
+    "product_image": "assets/canecas/michael_jackson_novo.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "2PAC",
+    "product_image": "assets/canecas/tupac.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Tyler The Creator",
+    "product_image": "assets/canecas/tyler.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Michael Jackson (Velho)",
+    "product_image": "assets/canecas/michael_jackson_velho.png",
+    "product_price": 34.90,
+    "category": "celebridade_gringa"
+  },
+  {
+    "product_name": "Michael Jordan",
+    "product_image": "assets/canecas/michael_jordan.png",
+    "product_price": 34.90,
+    "category": "esporte"
+  },
+  {
+    "product_name": "Neymar",
+    "product_image": "assets/canecas/neymar.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Selton Mello",
+    "product_image": "assets/canecas/selton_mello.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+  {
+    "product_name": "Trump",
+    "product_image": "assets/canecas/trump.png",
+    "product_price": 34.90,
+    "category": "politica"
+  },
+  {
+    "product_name": "Xuxa",
+    "product_image": "assets/canecas/xuxa.png",
+    "product_price": 34.90,
+    "category": "celebridade_brasil"
+  },
+
+  {
+    "product_name": "Junior Kyle",
+    "product_image": "assets/canecas/junior_kyle.png",
+    "product_price": 34.90,
+    "category": "series"
+  },
+  {
+    "product_name": "Michael Kyle",
+    "product_image": "assets/canecas/michael_kyle.png",
+    "product_price": 34.90,
+    "category": "series"
+  },
+
+  {
+    "product_name": "Michael Scott",
+    "product_image": "assets/canecas/michael_scott.png",
+    "product_price": 34.90,
+    "category": "series"
+  }
+
+
+
+]

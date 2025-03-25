@@ -1,8 +1,6 @@
 
 <main class="fade-in" *ngIf="!isLoading" style="
-background-image: url('assets/imagens/chinese-background.jpg');
-background-size: cover;
-height: 700px;
+background-image: url('assets/imagens/background-bage-teste.jpg');
 ">
 
 
@@ -12,11 +10,12 @@ height: 700px;
 
 
 
-  <div class="product-container" >
+  <!-- Lista de produtos da categoria 'celebridade_brasil' -->
 
+  <h2 class="category-title">來自巴西的名人</h2>
 
-    <div *ngFor="let product of products" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
-
+  <div class="product-container">
+    <div *ngFor="let product of filterByCategory('celebridade_brasil')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
       <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
       <h3>{{ product.product_name }}</h3>
 
@@ -32,6 +31,162 @@ height: 700px;
       <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
     </div>
   </div>
+
+
+
+
+  <h2 class="category-title">政策</h2>
+
+  <div class="product-container">
+    <div *ngFor="let product of filterByCategory('politica')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
+      <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
+    </div>
+  </div>
+
+
+
+
+  <!-- Lista de produtos da categoria 'celebridade_gringa' -->
+
+  <h2 class="category-title">國外名人</h2>
+
+
+  <div class="product-container">
+
+    <div *ngFor="let product of filterByCategory('celebridade_gringa')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
+      <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
+    </div>
+  </div>
+
+  <!-- Lista de produtos da categoria 'diva_pop' -->
+  <h2 class="category-title">流行天后</h2>
+
+  <div class="product-container"  >
+
+    <div *ngFor="let product of filterByCategory('diva_pop')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
+      <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
+    </div>
+  </div>
+
+  <!-- Continue duplicando para outras categorias -->
+
+
+  <h2 class="category-title">運動</h2> <!-- ESPORTE  -->
+
+  <div class="product-container">
+    <div *ngFor="let product of filterByCategory('esporte')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
+      <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h2 class="category-title">紐梅塔爾</h2> <!-- NUMETAL -->
+
+  <div class="product-container">
+    <div *ngFor="let product of filterByCategory('numetal')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
+      <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h2 class="category-title">電視劇</h2> <!-- SERIES  -->
+
+  <div class="product-container">
+    <div *ngFor="let product of filterByCategory('series')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
+      <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button" (click)="addToCart(product)" style="color:black !important;">+</button>
+    </div>
+  </div>
+
+
+
+
+  <br><br><br><br><br>
 
 
 
@@ -70,6 +225,16 @@ height: 700px;
 
 
 <style>
+
+
+  .category-title{
+    margin-top:20px;
+    margin-bottom: 5px;
+    font-size:25pt;
+    text-align: center;
+    color: white;
+    text-shadow:  1px 1px 1px black;
+  }
 
   @keyframes slide-in {
     from {

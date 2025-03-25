@@ -13,7 +13,15 @@ export class MainAPIService {
 
 
  private baseUrl = 'https://meme-in-mugs-backend.onrender.com/';
+
+  jsonUrl = 'assets/json/produtos.json';
+
+
   //  private baseUrl = 'http://127.0.0.1:5000';
+
+  getProducts(): Observable<any[]> {
+    return this.http.get<any[]>(this.jsonUrl);
+  }
 
 
 
