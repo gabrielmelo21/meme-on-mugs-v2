@@ -5,6 +5,7 @@ import {SnackbarService} from "../../services/snackbar.service";
 import {timeout} from "rxjs";
 import {PlayAudioService} from "../../services/play-audio.service";
 import {SharedStateService} from "../../services/shared-state.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 
@@ -18,7 +19,7 @@ import {SharedStateService} from "../../services/shared-state.service";
 export class HomeComponent  implements OnInit {
   isPlaying = false; // Estado do som
   showBoneco2: boolean = false;
-
+  id: string | null = null; // Variável para armazenar o ID
 
   /**
    * Categorias
@@ -30,18 +31,7 @@ export class HomeComponent  implements OnInit {
    * esporte
    * grunge
    *
-   *  {
-   *       product_name: 'Davi Calabreso',
-   *       product_image: 'assets/canecas/davi_calabreso.png',
-   *       product_price: 34.90,
-   *       category: 'celebridade_brasil',
-   *     },
-   *     {
-   *       product_name: 'John Cena',
-   *       product_image: 'assets/canecas/caneca-john-zedong.png',
-   *       product_price: 34.90,
-   *       category: 'celebridade_gringa',
-   *     },
+   *
    */
 
 
@@ -66,9 +56,10 @@ export class HomeComponent  implements OnInit {
               private shoppingCartService: ShoppingCartService,
               private snackbarService: SnackbarService,
               private playAudioService: PlayAudioService,
-              private sharedStateService: SharedStateService
+              private sharedStateService: SharedStateService,
+              private route: ActivatedRoute
              ) {
-
+    this.playAudioService.playMusic()
   }
 
 
@@ -79,7 +70,7 @@ export class HomeComponent  implements OnInit {
 
 
   products: any[] = [];
-  categories: string[] = ['celebridade_brasil', 'celebridade_gringa', 'diva_pop', 'politica', 'esporte', 'grunge'];
+  product: any = null; // Variável para armazenar os dados do produto
 
 
 
@@ -87,11 +78,31 @@ export class HomeComponent  implements OnInit {
   showBoneco: boolean = false;
 
 
+
+
   ngOnInit(): void {
+
+    // Pegando o parâmetro "id" da URL
+    this.route.queryParams.subscribe(params => {
+      this.id = params['id'];
+      console.log('ID recebido:', this.id);
+    });
+
+
+
+
+
+
 
     this.apiService.getProducts().subscribe(
       data => {
         this.products = data;
+
+        if (this.id!=='' || this.id!==null) {
+          // Filtrar o produto que tem a mesma `product_image` que o ID da URL
+          this.product = this.products.find(p => p.product_image === this.id);
+          console.log('Produto encontrado:', this.product);
+        }
       },
       error => {
         console.error('Erro ao carregar produtos:', error);
@@ -99,7 +110,7 @@ export class HomeComponent  implements OnInit {
     );
 
 
-    this.playAudioService.playMusic()
+
 
     setTimeout(() => {
       this.showBoneco = false;
@@ -116,6 +127,26 @@ export class HomeComponent  implements OnInit {
   filterByCategory(category: string) {
     return this.products.filter(product => product.category === category);
   }
+
+
+
+
+
+  copyShareLink(id: string) {
+    const url = `${window.location.origin}/home?id=${id}`;
+    alert(url)
+
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        console.log('Link copiado com sucesso:', url);
+        alert('Link copiado!');
+      })
+      .catch(err => console.error('Erro ao copiar link:', err));
+  }
+
+
+
+
 
 
 

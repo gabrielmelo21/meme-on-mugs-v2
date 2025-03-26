@@ -9,8 +9,38 @@ background-image: url('assets/imagens/background-bage-teste.jpg');
 
 
 
+  <div class="view_one_product" *ngIf="product && this.id!=='' && this.id!==null">
+    <div  class="product-item2" style="  margin-top:20px !important;background-size: 300%; background-image: url('assets/imagens/chinese-style.png') !important;">
 
-  <!-- Lista de produtos da categoria 'celebridade_brasil' -->
+
+
+
+    <img class="product-image" [src]="product.product_image" alt="{{ product.product_name }}">
+
+      <h3>{{ product.product_name }}</h3>
+
+      <div class="product-extra-info">
+        <p class="discount">De R$349,90 por</p>
+      </div>
+
+      <div class="product-details">
+        <p class="product-price">R{{ product.product_price | currency }}</p>
+        <p class="installment">3x de R{{ (product.product_price / 3) | currency }}</p>
+      </div>
+
+      <button class="add-button2" (click)="addToCart(product)" style="color:black !important;">+</button>
+
+    </div>
+  </div> <!-- end -->
+
+
+
+
+
+
+
+
+<div class="all_products_list" *ngIf="this.id=='' || this.id==null">
 
   <h2 class="category-title">來自巴西的名人</h2>
 
@@ -18,6 +48,7 @@ background-image: url('assets/imagens/background-bage-teste.jpg');
     <div *ngFor="let product of filterByCategory('celebridade_brasil')" class="product-item" style="margin-top:20px !important; background-image: url('assets/imagens/chinese-style.png') !important;">
       <img [src]="product.product_image || 'https://via.placeholder.com/150'" alt="{{ product.product_name }}" class="product-image">
       <h3>{{ product.product_name }}</h3>
+      <mat-icon (click)="  copyShareLink(product.product_image)"  style="position: absolute;right: 15px;top: 230px;color: white" >share</mat-icon>
 
       <div class="product-extra-info">
         <p class="discount">De R$349,90 por</p>
@@ -183,6 +214,11 @@ background-image: url('assets/imagens/background-bage-teste.jpg');
     </div>
   </div>
 
+
+
+
+
+</div> <!-- end all_products -->
 
 
 

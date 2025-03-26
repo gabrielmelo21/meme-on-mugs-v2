@@ -15,13 +15,16 @@
   z-index: 1100; /* Garante que fique acima de outros elementos */
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  outline: none !important;
 }
 
 .floating-button:hover {
   transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }
 
-
+.product-price{
+  font-size: 20pt !important;
+}
 
 .banner-hero {
 
@@ -51,29 +54,7 @@
 /* Estilos para dispositivos maiores (PCs) */
 @media (min-width: 769px) {
 
-  .margin-bottom140{
-    margin-bottom: 140px
-  }
 
-
-  .banner-hero {
-    background-image: url("/assets/main-banner-new.png");
-    height: 500px; /* Altura maior para PCs */
-    width: 100%;
-    transform: scale(0.7);
-    margin-top: -20px;
-  }
-  .banner-auxiliar{
-    height: 500px; /* Altura maior para PCs */
-    transform: scale(0.7);
-    margin-top: -149px;
-  }
-
-  .category-section{
-    width: 71%;
-    margin-left: 13%;
-    margin-top: -60px;
-  }
 }
 
 .custom-scrollbar {
@@ -178,10 +159,12 @@
   line-height: 40px; /* Alinhar o sinal de mais verticalmente */
   text-align: center;
   cursor: pointer;
+  outline: none;
 }
 
 .add-button:hover {
-  background-color: #095a7b; /* Cor ao passar o mouse */
+  background-color: red; /* Cor ao passar o mouse */
+  outline: none;
 }
 
 
@@ -189,6 +172,29 @@
 
 
 
+
+
+
+.add-button2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: gold !important; /* Cor do botão */
+  border: none;
+  font-size: 24px;
+  line-height: 40px; /* Alinhar o sinal de mais verticalmente */
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  bottom: -70px;
+  right: 30px;
+}
+
+.add-button2:hover {
+  background-color: red; /* Cor ao passar o mouse */
+  outline: none;
+}
 
 
 
@@ -254,6 +260,7 @@
 }
 
 .product-container {
+  outline: none !important;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -594,4 +601,56 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.product-item2 {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  width: 90% !important;
+  cursor: pointer;
+  outline: none !important;
+  font-family: "Chewy", serif;
+}
+
+
+.product-item2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+.product-item2 h3 {
+  font-size: 1em;
+  margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 2.4em;
+  font-family: "Chewy", serif;
+  color:  gold !important;
+}
+
+/* Ajuste no tamanho e cor do preço e parcelamento */
+.product-details2 p {
+  font-size: 1em;
+  color: white !important; /* Cor mais discreta */
+  font-weight: normal;
+  margin: 0;
+
+  font-family: "Chewy", serif;
+}
 
